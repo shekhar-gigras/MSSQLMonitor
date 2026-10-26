@@ -1,0 +1,10 @@
+{
+    "server": "",
+    "database": "master",
+    "authentication": "sql",
+    "username": "",
+    "password": "",
+    "encrypt": false,
+    "trust_server_certificate": false,
+    "driver": "ODBC Driver 17 for SQL Server"
+  }

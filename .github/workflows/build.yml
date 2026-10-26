@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: setup-python@v5
       with:
         python-version: '3.10'
 
@@ -29,11 +29,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pyinstaller pyodbc PyQt6
+        pip install pyinstaller pyodbc PyQt6 PyQt6-Charts
 
     - name: Build with PyInstaller
       run: |
-        pyinstaller --windowed --name "MSSQLMonitor" dashboard.py
+        pyinstaller --windowed --collect-all PyQt6.QtCharts --name "MSSQLMonitor" dashboard.py
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
